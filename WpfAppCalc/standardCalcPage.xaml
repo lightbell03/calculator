@@ -1,0 +1,67 @@
+﻿<Page x:Class="WpfAppCalc.standardCalcPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppCalc"
+      mc:Ignorable="d" 
+      Title="계산기" d:Height ="514" d:Width="339">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*" />
+            <ColumnDefinition Width="25*" />
+            <ColumnDefinition Width="25*" />
+            <ColumnDefinition Width="25*" />
+        </Grid.ColumnDefinitions>
+
+        <Button Content="+/-" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="9" Grid.Column="0" Click="sign_Btn_Click"/>
+        <Button x:Name="zero" Content="0" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="9" Grid.Column="1" Click="number_Btn_Click"/>
+        <Button Content="." Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="9" Grid.Column="2" Click="dot_Btn_Click"/>
+        <Button x:Name="equal" Content="=" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="9" Grid.Column="3" Click="operation_Btn_Click"/>
+        <Button x:Name="one"  Content="1" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="8" Grid.Column="0" Click="number_Btn_Click"/>
+        <Button x:Name="two" Content="2" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="8" Grid.Column="1" Click="number_Btn_Click"/>
+        <Button x:Name="three" Content="3" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="8" Grid.Column="2" Click="number_Btn_Click"/>
+        <Button x:Name="plus" Content="+" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="8" Grid.Column="3" Click="operation_Btn_Click"/>
+        <Button x:Name="four" Content="4" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="7" Grid.Column="0" Click="number_Btn_Click"/>
+        <Button x:Name="five" Content="5" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="7" Grid.Column="1" Click="number_Btn_Click"/>
+        <Button x:Name="six"  Content="6" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="7" Grid.Column="2" Click="number_Btn_Click"/>
+        <Button x:Name="minus" Content="-" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="7" Grid.Column="3" Click="operation_Btn_Click"/>
+        <Button x:Name="seven" Content="7" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="6" Grid.Column="0" Click="number_Btn_Click"/>
+        <Button x:Name="eight" Content="8" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="6" Grid.Column="1" Click="number_Btn_Click"/>
+        <Button x:Name="nine" Content="9" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="6" Grid.Column="2" Click="number_Btn_Click"/>
+        <Button x:Name="multi" Content="X" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="6" Grid.Column="3" Click="operation_Btn_Click"/>
+        <Button Content="1/x" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="5" Grid.Column="0" Click="inverse_Btn_Click"/>
+        <Button x:Name="power" Content="x^2" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="5" Grid.Column="1" Click="power_Btn_Click"/>
+        <Button Content="root(x)" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="5" Grid.Column="2" Click="root_Btn_Click"/>
+        <Button x:Name="divide" Content="/" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="5" Grid.Column="3" Click="operation_Btn_Click"/>
+        <Button Content="%" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="4" Grid.Column="0" Click="percent_Btn_Click"/>
+        <Button Content="CE" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="4" Grid.Column="1"/>
+        <Button x:Name="clear" Content="C" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="4" Grid.Column="2" Click="clear_Btn_Click"/>
+        <Button x:Name="del" Content="del" Width="Auto" Height="Auto" Margin="0.5, 0.5, 0.5, 0.5" Grid.Row="4" Grid.Column="3" Click="del_Btn_Click"/>
+        <TextBlock x:Name="inputText" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" FontSize="30" FontWeight="SemiBold"/>
+        <TextBlock x:Name="resultText" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontSize="15" />
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="40" >
+                <MenuItem.Header>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">menu</TextBlock>
+                </MenuItem.Header>
+                <MenuItem Header="프로그래머" Click="programmer_Menu_Btn_Click" />
+                <MenuItem Header="표준" Click="standard_Menu_Btn_Click"/>
+            </MenuItem>
+        </Menu>
+        <TextBlock x:Name="option" Grid.Row="0" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center">표준형</TextBlock>
+    </Grid>
+</Page>
